@@ -21,3 +21,23 @@ class Settings(BaseSettings):
         env_file = ".env"
 
 settings = Settings()
+# import os
+# from pydantic_settings import BaseSettings
+# from pathlib import Path
+
+# # এটি আপনার backend ফোল্ডারের এক ধাপ পেছনের (real-estate-ai) পাথ বের করবে
+# env_path = Path(__file__).resolve().parent.parent.parent.parent / ".env"
+
+# class Settings(BaseSettings):
+#     PROJECT_NAME: str = "NeuraLease"
+#     SECRET_KEY: str
+#     MONGODB_URL: str
+#     PINECONE_API_KEY: str
+#     GEMINI_API_KEY: str
+#     API_V1_STR: str = "/api/v1"
+
+#     class Config:
+#         env_file = str(env_path)
+#         case_sensitive = True
+
+# settings = Settings()
