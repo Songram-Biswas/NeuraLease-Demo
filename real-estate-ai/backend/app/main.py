@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.api.v1.endpoints import auth, properties
+from app.api.v1.endpoints.api import api_router
 from app.db.session import connect_to_mongo, close_mongo_connection
 
 app = FastAPI(title=settings.PROJECT_NAME)
@@ -27,3 +28,5 @@ app.include_router(auth.router, prefix=f"{settings.API_V1_STR}/auth", tags=["Aut
 @app.get("/")
 async def root():
     return {"message": "Welcome to NeuraLease AI API"}
+
+app.include_router(api_router, prefix=settings.API_V1_STR)
