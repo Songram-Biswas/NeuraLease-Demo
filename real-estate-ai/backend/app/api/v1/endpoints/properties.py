@@ -133,6 +133,7 @@ async def analyze_lease(file: UploadFile = File(...), db = Depends(get_db)):
         
         # মঙ্গোডিবিতে সেভ করে আইডি রিটার্ন করা
         property_id = await data_ops.save_property(property_data) 
+        print(f"✅ Analysis report saved to MongoDB with ID: {property_id}")    
 
         return {
             "id": property_id,
@@ -140,6 +141,7 @@ async def analyze_lease(file: UploadFile = File(...), db = Depends(get_db)):
             "status": "success",
             "analysis": final_state["analysis"]
         }
+        
 
     except Exception as e:
         # যেকোনো ইন্টারনাল এরর ডিটেইলসহ রিটার্ন করা
