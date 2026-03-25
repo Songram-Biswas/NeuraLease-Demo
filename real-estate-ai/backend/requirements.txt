@@ -61,6 +61,7 @@ langgraph==0.0.15
 # --- Document Processing ---
 pypdf==3.17.4
 python-dotenv==1.0.0
+email-validator==2.1.0.post1
 
 # --- Others ---
 pandas==2.1.4
