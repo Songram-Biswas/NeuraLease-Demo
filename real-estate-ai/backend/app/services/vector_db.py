@@ -6,7 +6,8 @@ class VectorManager:
     def __init__(self):
         self.client = chromadb.PersistentClient(path="./chroma_db")
         self.embedding_fn = embedding_functions.GoogleGenerativeAiEmbeddingFunction(
-            api_key=settings.GEMINI_API_KEY
+            api_key=settings.GEMINI_API_KEY,
+            model_name="models/text-embedding-004"
         )
         self.collection = self.client.get_or_create_collection(
             name="lease_documents",
