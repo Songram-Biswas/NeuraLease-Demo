@@ -67,7 +67,7 @@ from google.api_core import client_options
 class VectorManager:
     def __init__(self):
         # সনু ভাই, এখানে আমরা সরাসরি v1 এন্ডপয়েন্ট সেট করে দিচ্ছি
-        options = client_options.ClientOptions(api_endpoint="generativelanguage.googleapis.com/v1")
+        options = client_options.ClientOptions(api_endpoint="generativelanguage.googleapis.com")
         genai.configure(api_key=settings.GEMINI_API_KEY, client_options=options)
         self.documents = []
         self.embeddings = []
