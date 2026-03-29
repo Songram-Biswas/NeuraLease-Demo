@@ -7,7 +7,8 @@ class VectorManager:
         self.client = chromadb.PersistentClient(path="./chroma_db")
         self.embedding_fn = embedding_functions.GoogleGenerativeAiEmbeddingFunction(
             api_key=settings.GEMINI_API_KEY,
-            model_name="models/text-embedding-004"
+            model_name="models/text-embedding-004",
+            api_version="v1"
         )
         self.collection = self.client.get_or_create_collection(
             name="lease_documents",
